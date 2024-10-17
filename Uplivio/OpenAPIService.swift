@@ -5,9 +5,9 @@ class OpenAPIService {
     let messagePrompt = "Give me a short, positive motivational message to inspire someone today. The message should be no more than 30 words."
 
     
-    let backgroundImagePrompt = "Create a soft gradient background with smooth transitions between light pastel colors, such as light blue and white. The background should have a clean and simple surface without any shapes or distracting details, designed to allow text to stand out clearly. The overall aesthetic should be minimalistic and elegant."
+//    let backgroundImagePrompt = "Create a soft gradient background with smooth transitions between light pastel colors, such as light blue and white. The background should have a clean and simple surface without any shapes or distracting details, designed to allow text to stand out clearly. The overall aesthetic should be minimalistic and elegant."
     
-    let apiKey = "xxxxxxxx"
+    let apiKey = "xxxxxxx"
 
     // MARK: - Fetch Motivational Message
 
@@ -78,6 +78,12 @@ class OpenAPIService {
         task.resume()
     }
     
+    
+    
+    /* Image i openai apisi ile cekmekten vazgectim. image in yuklenmesi 10 saniye suruyor.
+     
+    // MARK: - Fetch Image
+
     func generateBackgroundImage(completion: @escaping (UIImage?) -> Void) {
         let url = URL(string: "https://api.openai.com/v1/images/generations")!
            
@@ -137,4 +143,5 @@ class OpenAPIService {
            
         task.resume()
     }
+     */
 }

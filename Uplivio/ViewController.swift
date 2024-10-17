@@ -25,13 +25,7 @@ class ViewController: UIViewController {
         return label
     }()
 
-    // Background Image
-    let backgroundImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+
 
     // OpenAPIService
     let openAPIService = OpenAPIService()
@@ -41,36 +35,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
+//        setupUI()
         fetchDailyMotivationMessage()
-        fetchBackgroundImage()
+//        fetchBackgroundImage()
     }
 
     // MARK: - Functions
     
-    // Setup UI
-    func setupUI() {
-        view.addSubview(backgroundImage)
 
-
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-
-        view.sendSubviewToBack(backgroundImage)
-
-        view.addSubview(messageLabel)
-
-        NSLayoutConstraint.activate([
-            messageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            messageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            messageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
-        ])
-    }
 
     // Fetch Motivational Message
     func fetchDailyMotivationMessage() {
@@ -92,16 +64,63 @@ class ViewController: UIViewController {
         messageLabel.text = message
     }
 
-    // Fetch Background Image
-    func fetchBackgroundImage() {
-        openAPIService.generateBackgroundImage { [weak self] image in
-            DispatchQueue.main.async {
-                if let image = image {
-                    self?.backgroundImage.image = image
-                } else {
-                    print("Failed to set background image")
-                }
+    
+
+}
+
+
+
+
+
+//--------------------------------------------------------
+/* Cancelled.
+// Background Image
+let backgroundImage: UIImageView = {
+    let imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFill
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    return imageView
+}()
+ */
+
+
+/* Cancelled.
+// Fetch Background Image
+func fetchBackgroundImage() {
+    openAPIService.generateBackgroundImage { [weak self] image in
+        DispatchQueue.main.async {
+            if let image = image {
+                self?.backgroundImage.image = image
+            } else {
+                print("Failed to set background image")
             }
         }
     }
 }
+ */
+
+/* Cancelled. It includes background image.
+// Setup UI
+func setupUI() {
+    view.addSubview(backgroundImage)
+
+
+    NSLayoutConstraint.activate([
+        backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+        backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ])
+
+    view.sendSubviewToBack(backgroundImage)
+
+    view.addSubview(messageLabel)
+
+    NSLayoutConstraint.activate([
+        messageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        messageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        messageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+        messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+    ])
+}
+ */
