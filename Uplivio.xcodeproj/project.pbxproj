@@ -6,11 +6,52 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8134933B2CC3F0E000002D98 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8134933A2CC3F0E000002D98 /* WidgetKit.framework */; };
+		8134933D2CC3F0E000002D98 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8134933C2CC3F0E000002D98 /* SwiftUI.framework */; };
+		8134934E2CC3F0E100002D98 /* UplivioWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 813493382CC3F0DF00002D98 /* UplivioWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		815369B92CC1225C00EBA224 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 815369B82CC1225C00EBA224 /* Lottie */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8134934C2CC3F0E100002D98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81B93DA82CBE985F00005908 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 813493372CC3F0DF00002D98;
+			remoteInfo = UplivioWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		813493532CC3F0E100002D98 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8134934E2CC3F0E100002D98 /* UplivioWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		813493382CC3F0DF00002D98 /* UplivioWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UplivioWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8134933A2CC3F0E000002D98 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8134933C2CC3F0E000002D98 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		81B93DB02CBE985F00005908 /* Uplivio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uplivio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		813493522CC3F0E100002D98 /* Exceptions for "UplivioWidget" folder in "UplivioWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 813493372CC3F0DF00002D98 /* UplivioWidgetExtension */;
+		};
 		81B93DC22CBE986000005908 /* Exceptions for "Uplivio" folder in "Uplivio" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -21,6 +62,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8134933E2CC3F0E000002D98 /* UplivioWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				813493522CC3F0E100002D98 /* Exceptions for "UplivioWidget" folder in "UplivioWidgetExtension" target */,
+			);
+			path = UplivioWidget;
+			sourceTree = "<group>";
+		};
 		81B93DB22CBE985F00005908 /* Uplivio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,20 +81,41 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		813493352CC3F0DF00002D98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8134933D2CC3F0E000002D98 /* SwiftUI.framework in Frameworks */,
+				8134933B2CC3F0E000002D98 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81B93DAD2CBE985F00005908 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815369B92CC1225C00EBA224 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		813493392CC3F0E000002D98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8134933A2CC3F0E000002D98 /* WidgetKit.framework */,
+				8134933C2CC3F0E000002D98 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		81B93DA72CBE985F00005908 = {
 			isa = PBXGroup;
 			children = (
 				81B93DB22CBE985F00005908 /* Uplivio */,
+				8134933E2CC3F0E000002D98 /* UplivioWidget */,
+				813493392CC3F0E000002D98 /* Frameworks */,
 				81B93DB12CBE985F00005908 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				81B93DB02CBE985F00005908 /* Uplivio.app */,
+				813493382CC3F0DF00002D98 /* UplivioWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +132,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		813493372CC3F0DF00002D98 /* UplivioWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8134934F2CC3F0E100002D98 /* Build configuration list for PBXNativeTarget "UplivioWidgetExtension" */;
+			buildPhases = (
+				813493342CC3F0DF00002D98 /* Sources */,
+				813493352CC3F0DF00002D98 /* Frameworks */,
+				813493362CC3F0DF00002D98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8134933E2CC3F0E000002D98 /* UplivioWidget */,
+			);
+			name = UplivioWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = UplivioWidgetExtension;
+			productReference = 813493382CC3F0DF00002D98 /* UplivioWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		81B93DAF2CBE985F00005908 /* Uplivio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81B93DC32CBE986000005908 /* Build configuration list for PBXNativeTarget "Uplivio" */;
@@ -68,16 +161,19 @@
 				81B93DAC2CBE985F00005908 /* Sources */,
 				81B93DAD2CBE985F00005908 /* Frameworks */,
 				81B93DAE2CBE985F00005908 /* Resources */,
+				813493532CC3F0E100002D98 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8134934D2CC3F0E100002D98 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				81B93DB22CBE985F00005908 /* Uplivio */,
 			);
 			name = Uplivio;
 			packageProductDependencies = (
+				815369B82CC1225C00EBA224 /* Lottie */,
 			);
 			productName = Uplivio;
 			productReference = 81B93DB02CBE985F00005908 /* Uplivio.app */;
@@ -93,6 +189,9 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					813493372CC3F0DF00002D98 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					81B93DAF2CBE985F00005908 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -108,6 +207,7 @@
 			mainGroup = 81B93DA72CBE985F00005908;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				815369B72CC1225C00EBA224 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 81B93DB12CBE985F00005908 /* Products */;
@@ -115,11 +215,19 @@
 			projectRoot = "";
 			targets = (
 				81B93DAF2CBE985F00005908 /* Uplivio */,
+				813493372CC3F0DF00002D98 /* UplivioWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		813493362CC3F0DF00002D98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81B93DAE2CBE985F00005908 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +238,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		813493342CC3F0DF00002D98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81B93DAC2CBE985F00005908 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,7 +254,69 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8134934D2CC3F0E100002D98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 813493372CC3F0DF00002D98 /* UplivioWidgetExtension */;
+			targetProxy = 8134934C2CC3F0E100002D98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		813493502CC3F0E100002D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNBZP8PU72;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UplivioWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UplivioWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmrts.Uplivio.UplivioWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		813493512CC3F0E100002D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNBZP8PU72;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UplivioWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = UplivioWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmrts.Uplivio.UplivioWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		81B93DC42CBE986000005908 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -320,6 +497,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8134934F2CC3F0E100002D98 /* Build configuration list for PBXNativeTarget "UplivioWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				813493502CC3F0E100002D98 /* Debug */,
+				813493512CC3F0E100002D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		81B93DAB2CBE985F00005908 /* Build configuration list for PBXProject "Uplivio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -339,6 +525,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		815369B72CC1225C00EBA224 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		815369B82CC1225C00EBA224 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 815369B72CC1225C00EBA224 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 81B93DA82CBE985F00005908 /* Project object */;
 }

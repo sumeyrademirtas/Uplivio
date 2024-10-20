@@ -2,12 +2,9 @@ import Foundation
 import UIKit
 
 class OpenAPIService {
-    let messagePrompt = "Give me a short, positive motivational message to inspire someone today. The message should be no more than 30 words."
+    let messagePrompt = "Give me a short, positive motivational message to inspire someone today. The message should be no more than 30 words, and it should be a complete sentence."
 
-    
-//    let backgroundImagePrompt = "Create a soft gradient background with smooth transitions between light pastel colors, such as light blue and white. The background should have a clean and simple surface without any shapes or distracting details, designed to allow text to stand out clearly. The overall aesthetic should be minimalistic and elegant."
-    
-    let apiKey = "xxxxxxx"
+    let apiKey = "xxxxxxxx"
 
     // MARK: - Fetch Motivational Message
 
@@ -78,70 +75,70 @@ class OpenAPIService {
         task.resume()
     }
     
-    
-    
     /* Image i openai apisi ile cekmekten vazgectim. image in yuklenmesi 10 saniye suruyor.
      
-    // MARK: - Fetch Image
+      //    let backgroundImagePrompt = "Create a soft gradient background with smooth transitions between light pastel colors, such as light blue and white. The background should have a clean and simple surface without any shapes or distracting details, designed to allow text to stand out clearly. The overall aesthetic should be minimalistic and elegant."
+     
+     // MARK: - Fetch Image
 
-    func generateBackgroundImage(completion: @escaping (UIImage?) -> Void) {
-        let url = URL(string: "https://api.openai.com/v1/images/generations")!
+     func generateBackgroundImage(completion: @escaping (UIImage?) -> Void) {
+         let url = URL(string: "https://api.openai.com/v1/images/generations")!
            
-        // Prompt, arka plan oluşturma için
-        let parameters: [String: Any] = [
-            "model": "dall-e-2",
-            "prompt": "Create a soft gradient background with smooth transitions between light pastel colors, such as light blue and white. The background should have a clean and simple surface without any shapes or distracting details, designed to allow text to stand out clearly. The overall aesthetic should be minimalistic and elegant.",
-            "n": 1,
-            "size": "1024x1024"
-        ]
+         // Prompt, arka plan oluşturma için
+         let parameters: [String: Any] = [
+             "model": "dall-e-2",
+             "prompt": "Create a soft gradient background with smooth transitions between light pastel colors, such as light blue and white. The background should have a clean and simple surface without any shapes or distracting details, designed to allow text to stand out clearly. The overall aesthetic should be minimalistic and elegant.",
+             "n": 1,
+             "size": "1024x1024"
+         ]
            
-        let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
+         let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
            
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
-        request.httpBody = jsonData
+         var request = URLRequest(url: url)
+         request.httpMethod = "POST"
+         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+         request.httpBody = jsonData
            
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
-            if let error = error {
-                print("Error fetching image: \(error.localizedDescription)")
-                completion(nil)
-                return
-            }
+         let task = URLSession.shared.dataTask(with: request) { data, _, error in
+             if let error = error {
+                 print("Error fetching image: \(error.localizedDescription)")
+                 completion(nil)
+                 return
+             }
                
-            guard let data = data else {
-                print("No data received")
-                completion(nil)
-                return
-            }
+             guard let data = data else {
+                 print("No data received")
+                 completion(nil)
+                 return
+             }
                
-            do {
-                // Gelen yanıtı çözümleme
-                if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let dataArray = jsonResponse["data"] as? [[String: Any]],
-                   let firstImageData = dataArray.first,
-                   let imageUrlString = firstImageData["url"] as? String,
-                   let imageUrl = URL(string: imageUrlString)
-                {
-                    // Görseli URL'den indir
-                    if let imageData = try? Data(contentsOf: imageUrl), let image = UIImage(data: imageData) {
-                        completion(image) // Görseli geri döndür
-                    } else {
-                        print("Failed to load image from URL")
-                        completion(nil)
-                    }
-                } else {
-                    print("Failed to parse JSON")
-                    completion(nil)
-                }
-            } catch {
-                print("Error parsing JSON: \(error.localizedDescription)")
-                completion(nil)
-            }
-        }
+             do {
+                 // Gelen yanıtı çözümleme
+                 if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                    let dataArray = jsonResponse["data"] as? [[String: Any]],
+                    let firstImageData = dataArray.first,
+                    let imageUrlString = firstImageData["url"] as? String,
+                    let imageUrl = URL(string: imageUrlString)
+                 {
+                     // Görseli URL'den indir
+                     if let imageData = try? Data(contentsOf: imageUrl), let image = UIImage(data: imageData) {
+                         completion(image) // Görseli geri döndür
+                     } else {
+                         print("Failed to load image from URL")
+                         completion(nil)
+                     }
+                 } else {
+                     print("Failed to parse JSON")
+                     completion(nil)
+                 }
+             } catch {
+                 print("Error parsing JSON: \(error.localizedDescription)")
+                 completion(nil)
+             }
+         }
            
-        task.resume()
-    }
-     */
+         task.resume()
+     }
+      */
 }
